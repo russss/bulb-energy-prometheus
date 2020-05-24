@@ -19,7 +19,7 @@ Install this exporter using `pip3 install git+https://github.com/russss/bulb-ene
 
 ### Docker
 
-Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus). Set the environment variable as above.
+Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus). Set the `SMARTTHINGS_API_TOKEN` environment variable as above.
 
 ## Example output
 An example of the exported metrics:
