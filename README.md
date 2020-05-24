@@ -13,9 +13,13 @@ Electricity meter readings are sent to SmartThings every minute or so, but gas m
 * First, you'll need to set up the [SmartThings integration](https://help.bulb.co.uk/hc/en-us/articles/360034651651-Setting-up-SmartThings-Energy-Control-STEC-) on your Chameleon IHD.
 * Next, you'll need to generate a personal access token on the SmartThings website. The token needs the "List all devices" and "See all devices" permissions.
 
+### Install using pip
+
 Install this exporter using `pip3 install git+https://github.com/russss/bulb-energy-prometheus#egg=bulb-energy-prometheus`. Now you can run the exporter as `SMARTTHINGS_API_TOKEN=<token> bulb-energy-prometheus`, where `<token>` is the token you generated in the previous step. The Prometheus endpoint should be visible at `http://localhost:8023`.
 
-Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus).
+### Docker
+
+Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus). Set the environment variable as above.
 
 ## Example output
 An example of the exported metrics:
