@@ -6,17 +6,19 @@ This relies on Bulb's SmartThings integration to exfiltrate the meter readings. 
 
 Ideally we would be able to integrate directly with the SMETS2 home area network, but this (still!) doesn't appear to be possible.
 
-Electricity meter readings are updated every minute or so, but gas meter readings are only updated a few times per day (due to battery life).
+Electricity meter readings are sent to SmartThings every minute or so, but gas meter readings are only updated a few times per day (due to battery life). This exporter polls the SmartThings API every 10 seconds for an updated reading - it's technically possible to subscribe to event notifications but this requires opening a port for webhooks and life is too short.
 
 ## Configuration
 
 * First, you'll need to set up the [SmartThings integration](https://help.bulb.co.uk/hc/en-us/articles/360034651651-Setting-up-SmartThings-Energy-Control-STEC-) on your Chameleon IHD.
-* Install this exporter using `pip3 install git+https://github.com/russss/bulb-energy-prometheus#egg=bulb-energy-prometheus`.
 * Next, you'll need to generate a personal access token on the SmartThings website. The token needs the "List all devices" and "See all devices" permissions.
 
+Install this exporter using `pip3 install git+https://github.com/russss/bulb-energy-prometheus#egg=bulb-energy-prometheus`. Now you can run the exporter as `SMARTTHINGS_API_TOKEN=<token> bulb-energy-prometheus`, where `<token>` is the token you generated in the previous step. The Prometheus endpoint should be visible at `http://localhost:8023`.
 
-Now you can run the exporter as `SMARTTHINGS_API_TOKEN=<token> bulb-energy-prometheus`, where `<token>` is the token you generated in the previous step. The Prometheus endpoint should be visible at `http://localhost:8023`. An example of the exported metrics is:
+Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus).
 
+## Example output
+An example of the exported metrics:
 ```
 # HELP bulb_electricity_used_kwh Electricity meter reading
 # TYPE bulb_electricity_used_kwh gauge
