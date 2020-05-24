@@ -11,7 +11,7 @@ Electricity meter readings are sent to SmartThings every minute or so, but gas m
 ## Configuration
 
 * First, you'll need to set up the [SmartThings integration](https://help.bulb.co.uk/hc/en-us/articles/360034651651-Setting-up-SmartThings-Energy-Control-STEC-) on your Chameleon IHD.
-* Next, you'll need to generate a personal access token on the SmartThings website. The token needs the "List all devices" and "See all devices" permissions.
+* Next, you'll need to [generate a personal access token on the SmartThings website](https://account.smartthings.com/tokens). The token needs the "List all devices" and "See all devices" permissions.
 
 ### Install using pip
 
