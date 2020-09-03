@@ -29,8 +29,16 @@ async def main(api_token):
         while True:
             with refresh_time.time():
                 await device.status.refresh()
-            gauge_electricity.set(device.status.values.get("energy"))
-            gauge_gas.set(device.status.values.get("gasMeter"))
+            if device.status.values.get("energy"):
+                gauge_electricity.set(device.status.values.get("energy"))
+            else:
+                print("Can't get electricity reading")
+
+            if device.status.values.get("gasMeter"):
+                gauge_gas.set(device.status.values.get("gasMeter"))
+            else:
+                print("Can't get gas meter reading")
+
             await asyncio.sleep(10)
 
 
