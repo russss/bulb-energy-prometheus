@@ -21,7 +21,7 @@ You'll want to run the exporter under a process supervisor, as it will crash if 
 
 ### Docker
 
-Alternatively, you can use [the Docker image](https://hub.docker.com/repository/docker/russss/bulb-energy-prometheus). Set the `SMARTTHINGS_API_TOKEN` environment variable as above.
+Alternatively, you can use [the Docker image](https://hub.docker.com/r/russss/bulb-energy-prometheus). Set the `SMARTTHINGS_API_TOKEN` environment variable as above.
 
 ## Example output
 An example of the exported metrics:
