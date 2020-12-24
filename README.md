@@ -15,7 +15,11 @@ Electricity meter readings are sent to SmartThings every minute or so, but gas m
 
 ### Install using pip
 
-Install this exporter using `pip3 install git+https://github.com/russss/bulb-energy-prometheus#egg=bulb-energy-prometheus`. Now you can run the exporter as `SMARTTHINGS_API_TOKEN=<token> bulb-energy-prometheus`, where `<token>` is the token you generated in the previous step. The Prometheus endpoint should be visible at `http://localhost:8023`.
+Install this exporter using `pip3 install git+https://github.com/russss/bulb-energy-prometheus#egg=bulb-energy-prometheus`.
+
+You'll need to run the `bulb-energy-prometheus` process with the `SMARTTHINGS_API_TOKEN` environment variable set to the API token you generated earlier. You can do this with `SMARTTHINGS_API_TOKEN=<token> bulb-energy-prometheus`.
+
+The Prometheus endpoint should be visible at `http://localhost:8023`.
 
 You'll want to run the exporter under a process supervisor, as it will crash if it can't access the SmartThings API.
 
