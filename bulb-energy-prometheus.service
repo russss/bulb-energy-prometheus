@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 User=ubuntu
-ExecStart=docker run -e SMARTTHINGS_API_TOKEN="TOKEN" -p 8023:8023 iwishiwasaneagle/bulb-energy-prometheus:latest
+ExecStart=docker run -e SMARTTHINGS_API_TOKEN="TOKEN" -p 8023:8023 iwishiwasaneagle/bulb-energy-prometheus
 
 [Install]
 WantedBy=default.target
