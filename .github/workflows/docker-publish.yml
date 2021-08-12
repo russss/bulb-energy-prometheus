@@ -15,7 +15,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/bulb-energy-prometheus
+          DOCKER_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/bulb-energy-prometheus
           VERSION=latest
           SHORTREF=${GITHUB_SHA::8}
 
