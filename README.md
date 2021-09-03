@@ -1,6 +1,6 @@
 # :chart_with_downwards_trend: Bulb Energy Prometheus exporter
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/iwishiwasaneagle/bulb-energy-prometheus)](https://hub.docker.com/repository/docker/iwishiwasaneagle/bulb-energy-prometheus) [![build and publish](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml)
+[![build and publish](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml)
 
 This is a [Prometheus](https://prometheus.io/) exporter for [Bulb Energy](https://bulb.co.uk/) customers with SMETS2 smart meters. It allows you to fetch electricity and gas meter readings and exposes them as a Prometheus endpoint.
 
