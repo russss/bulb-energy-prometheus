@@ -1,12 +1,16 @@
 # :chart_with_downwards_trend: Bulb Energy Prometheus exporter
 
-[![build and publish](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/iwishiwasaneagle/bulb-energy-prometheus/actions/workflows/docker-publish.yml)
+> **This project is now archived**. At the time of writing (June 2022), it still works fine, however the [current financial status](https://www.bbc.co.uk/news/business-59373198) of Bulb means this likely won't last for ever.
+>
+> The [Hildebrand Glow IHD](https://shop.glowmarkt.com/products/display-and-cad-combined-for-smart-meter-customers) now supports publishing energy data to a [MQTT server](https://medium.com/@joshua.cooper/glow-local-mqtt-f69b776b7af4) entirely over your local network, removing the need to rely on energy-supplier-specific hacks and/or cloud services. I'm now using one of these rather than this code.
+
+## Intro
 
 This is a [Prometheus](https://prometheus.io/) exporter for [Bulb Energy](https://bulb.co.uk/) customers with SMETS2 smart meters. It allows you to fetch electricity and gas meter readings and exposes them as a Prometheus endpoint.
 
 This relies on Bulb's SmartThings integration to exfiltrate the meter readings. It will not work with other energy suppliers.
 
-Ideally we would be able to integrate directly with the SMETS2 home area network, but this (still!) doesn't appear to be possible.
+~Ideally we would be able to integrate directly with the SMETS2 home area network, but this (still!) doesn't appear to be possible.~ (See above.)
 
 Electricity meter readings are sent to SmartThings every minute or so, but gas meter readings are only updated a few times per day (due to battery life). This exporter polls the SmartThings API every 10 seconds for an updated reading - it's technically possible to subscribe to event notifications but this requires opening a port for webhooks and life is too short.
 
